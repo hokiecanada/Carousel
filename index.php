@@ -1,5 +1,6 @@
 <?php 
     require_once("config.php");
+    define("SIZE_LIMIT", 26214400);
 
     if(isset($_FILES['files'])) {
         $response = array();
@@ -20,7 +21,7 @@
                 && $fileType != "avif" && $fileType != "heic" && $fileType != "webp" && $fileType != "avi"
                 && $fileType != "mp4" && $fileType != "mov") {
                 $response["files"][] = array("file" => $originalFileName, "status" => "error", "message" => "Invalid file type. Allowed file types: PNG, JPEG, GIF, HEIC, WEBP, AVI, MP4, MOV.");
-            } elseif ($fileSize > 26214400) {
+            } elseif ($fileSize > SIZE_LIMIT) {
                 $response["files"][] = array("file" => $originalFileName, "status" => "error", "message" => "File is too large. Maxiumum file size is 25MB.");
             } else {
                 $targetFileName = $date . '-' . $fileName . "." . $fileType;
@@ -32,7 +33,7 @@
                     $extra++;
                 }
                 if (move_uploaded_file($fileTmpName, $targetFile)) {
-                    $q = sprintf("INSERT INTO mav_gallery (file, category, description, datetime) VALUES ('%s', '%s', '%s', '%s')",
+                    $q = sprintf("INSERT INTO gallery (file, category, description, datetime) VALUES ('%s', '%s', '%s', '%s')",
                             $db->real_escape_string($targetFileName), $db->real_escape_string($category), $db->real_escape_string($description), date("Y-m-d H:i:s"));
                     $result = $db->query($q);
 
@@ -60,7 +61,7 @@
         <link rel="stylesheet" href="./gallery.css?v=1.6">
     </head>
     <body>
-        <h1>Drag and Drop<br><span style="color: red; padding-left: 50px;">Uploader</span></h1>
+        <h1>Drag and Drop<br><span class="red">Uploader</span></h1>
         <form class="upload_form is-browse" method="post" action="." enctype="multipart/form-data">
             <input type="hidden" name="action" value="upload">
             <div class="outer_box">
