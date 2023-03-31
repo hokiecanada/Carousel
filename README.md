@@ -1,7 +1,9 @@
-#Drag and Drop File Uploader
+# Drag and Drop File Uploader
 A simple template for a file uploader that supports drag and drop for multiple files. It also captures form details that are saved in a corresponding database for sorting/filtering.
 
-##Setup
+![Screenshot of the drag and drop file uploader](https://github.com/hokiecanada/DragDropUploader/blob/main/screenshot.png)
+
+## Setup
 1. Need a config.php file with the DB connection info. Example:
 ```
 <?php
@@ -27,5 +29,5 @@ CREATE TABLE `gallery` (
 ```
 
 3. Update file type/limit settings based on your server limitations.
-gallery.js / lines 14-15
-index.php / line 3
+* gallery.js / lines 14-15
+* index.php / line 3
