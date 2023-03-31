@@ -60,7 +60,7 @@
         <link rel="stylesheet" href="./gallery.css?v=1.6">
     </head>
     <body>
-        <h1>Maverick Volleyball<br><span style="color: red; padding-left: 50px;">Gallery</span></h1>
+        <h1>Drag and Drop<br><span style="color: red; padding-left: 50px;">Uploader</span></h1>
         <form class="upload_form is-browse" method="post" action="." enctype="multipart/form-data">
             <input type="hidden" name="action" value="upload">
             <div class="outer_box">
@@ -101,12 +101,8 @@
                 <div class="error">Please select a category.</div>
                 <select id="category" name="category">
                     <option disabled selected value> -- Select a category -- </option>
-                    <option value="Learn-to-Play">Learn-to-Play</option>
-                    <option value="Teen Recreational">Teen Recreational</option>
-                    <option value="CTC">CTC</option>
-                    <option value="Competitive">Competitive</option>
-                    <option value="High Performance">High Performance</option>
-                    <option value="Camps">Camps</option>
+                    <option value="Category 1">Category 1</option>
+                    <option value="Category 2">Category 2</option>
                 </select>
             </div>
             <div class="input_field">
@@ -119,7 +115,7 @@
                     <span class="fake_checkbox_wrapper">
                         <span class="fake_checkbox"></span>
                     </span>
-                    <span class="red" style="margin-right: 5px">*</span><span class="small">I understand these images are going to be considered for use on the Maverick Volleyball web site.</span>
+                    <span class="red" style="margin-right: 5px">*</span><span class="small">I understand these images are going to be considered for use on our social media sites.</span>
                 </label>
             </div>
             <button type="submit" class="box__button">UPLOAD</button>
