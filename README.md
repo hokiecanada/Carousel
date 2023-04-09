@@ -1,33 +1,9 @@
-# Drag and Drop File Uploader
-A simple template for a file uploader that supports drag and drop for multiple files. It also captures form details that are saved in a corresponding database for sorting/filtering.
+# Infinite Carousel
+A carousel where the bubbles grow/shrink as they get closer and move away from center. On mobile, only 3 bubbles are displayed at a time and the title is hidden. On desktop (>= 768px) 5 bubbles are displayed at a time.
 
-![Screenshot of the drag and drop file uploader](https://github.com/hokiecanada/DragDropUploader/blob/main/screenshot.png)
+![Screenshot of the mobile version of the infinite carousel](https://github.com/hokiecanada/InfiniteCarousel/blob/main/screenshot-mobile.png)
 
-## Setup
-1. Need a config.php file with the DB connection info. Example:
-```
-<?php
-define('DB_NAME', 'some_database');
-define('DB_USER', 'some_user');
-define('DB_PASSWORD', 'some_password');
-define('DB_HOST', 'localhost');
+![Screenshot of the desktop version of the infinite carousel](https://github.com/hokiecanada/InfiniteCarousel/blob/main/screenshot-desktop.png)
 
-$db = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-?>
-```
-
-2. Database table with the following fields:
-```
-CREATE TABLE `gallery` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `file` varchar(100) DEFAULT '',
-  `category` varchar(50) DEFAULT NULL,
-  `description` varchar(500) DEFAULT '',
-  `datetime` datetime DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-```
-
-3. Update file type/limit settings based on your server limitations.
-* gallery.js / lines 14-15
-* index.php / line 3
+# Instructions
+To use this carousel, simply update the .html to include the images/names/details you want to use. You can add as many "slide" elements as you wish (8 slides minimum to work properly).
